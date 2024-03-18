@@ -1,0 +1,80 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface Logic {
++execute(String): CommandResult
++getAddressBook(): ReadOnlyAddressBook
++getFilteredPersonList(): ObservableList<Person>
++getAddressBookFilePath(): Path
++getGuiSettings(): GuiSettings
++setGuiSettings(GuiSettings)
+}
+
+interface ReadOnlyAddressBook {
++getPersonList(): ObservableList<Person>
+}
+
+interface ReadOnlyUserPrefs {
++getGuiSettings(): GuiSettings
++getAddressBookFilePath(): Path
+}
+
+interface Model {
++PREDICATE_SHOW_ALL_PERSONS: Predicate<Person>
+
++hasPerson(Person): boolean
++deletePerson(Person)
++addPerson(Person)
++removePerson(Person)
++getPersonList(): ObservableList<Person>
++setPerson(target: Person, editedPerson: Person)
+}
+
+class ModelManager {
+-logger: Logger
+-addressBook: AddressBook
+-userPrefs: UserPrefs
+-filteredPersons: FilteredList<Person>
+}
+
+class UserPrefs {
+-guiSettings: GuiSettings
+-addressBookFilePath: Path
+
++resetData(ReadOnlyUserPrefs)
++setGuiSettings(GuiSettings)
++setAddressBookFilePath(Path)
++getAddressBookFilePath(): Path
+}
+
+class AddressBook {
+-persons: UniquePersonList
+
++setPersons(List<Person>)
++resetData(ReadOnlyAddressBook)
++addPerson(Person)
++hasPerson(Person): boolean
++setPerson(target: Person, editedPerson: Person)
+}
+
+Model <|.. ModelManager
+ReadOnlyUserPrefs <|.. UserPrefs
+ReadOnlyAddressBook <|.. AddressBook
+
+
+class Person {
+-name: Name
+-phone: Phone
+-email: Email
+-roomNumber: RoomNumber
+-telegram: Telegram
+-birthday: Birthday
+
++isSamePerson(Person): boolean
++equals(Object): boolean
+}
+
+AddressBook "1" *-- "many" Person : contains
+
+
+@enduml
