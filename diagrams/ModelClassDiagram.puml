@@ -14,11 +14,13 @@ Class UserPrefs
 
 Class UniquePersonList
 Class Person
-Class Address
-Class Email
 Class Name
+Class Email
 Class Phone
-Class Tag
+Class RoomNumber
+Class Telegram
+Class Birthday
+Class FreeTime
 
 Class I #FFFFFF
 }
@@ -37,18 +39,16 @@ UserPrefs .up.|> ReadOnlyUserPrefs
 
 AddressBook *--> "1" UniquePersonList
 UniquePersonList --> "~* all" Person
-Person *--> Name
-Person *--> Phone
-Person *--> Email
-Person *--> Address
-Person *--> "*" Tag
+Person *--> "1" Name
+Person *--> "1" Phone
+Person *--> "0..1" Email
+Person *--> "0..1" RoomNumber
+Person *--> "0..1" Telegram
+Person *--> "0..1" Birthday
+Person *--> "*" FreeTime
 
 Person -[hidden]up--> I
 UniquePersonList -[hidden]right-> I
-
-Name -[hidden]right-> Phone
-Phone -[hidden]right-> Address
-Address -[hidden]right-> Email
 
 ModelManager --> "~* filtered" Person
 @enduml
