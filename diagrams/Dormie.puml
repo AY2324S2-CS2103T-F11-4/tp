@@ -30,6 +30,14 @@ interface Model {
 +setPerson(target: Person, editedPerson: Person)
 }
 
+interface Storage  {
++readUserPrefs(): Optional<UserPrefs>
++saveUserPrefs(ReadOnlyUserPrefs)
++getAddressBookFilePath(): Path
++readAddressBook():Optional<ReadOnlyAddressBook>
+saveAddressBook(ReadOnlyAddressBook)
+}
+
 class ModelManager {
 -logger: Logger
 -addressBook: AddressBook
