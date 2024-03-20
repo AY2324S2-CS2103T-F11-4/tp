@@ -74,7 +74,14 @@ class Person {
 +equals(Object): boolean
 }
 
-AddressBook "1" *-- "many" Person : contains
+class FreeTime {
+-day: String
+-startTime: String
+-endTime: String
+}
+
+AddressBook "1" *-- "*" Person : contains
+Person "1" *-- "*" FreeTime
 
 
 @enduml
