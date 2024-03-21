@@ -21,6 +21,7 @@ Class RoomNumber
 Class Telegram
 Class Birthday
 Class FreeTime
+Class Dorm
 
 Class I #FFFFFF
 }
@@ -46,6 +47,7 @@ Person *--> "0..1" RoomNumber
 Person *--> "0..1" Telegram
 Person *--> "0..1" Birthday
 Person *--> "*" FreeTime
+Person *--> "0..1" Dorm
 
 Person -[hidden]up--> I
 UniquePersonList -[hidden]right-> I

@@ -77,6 +77,7 @@ class Person {
 -roomNumber: RoomNumber
 -telegram: Telegram
 -birthday: Birthday
+-dorm: Dorm
 
 +isSamePerson(Person): boolean
 +equals(Object): boolean
