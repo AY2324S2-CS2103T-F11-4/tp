@@ -88,6 +88,84 @@ class FreeTime {
 -endTime: String
 }
 
+class CommandException extends Exception {
+}
+
+abstract class Command {
+}
+
+class AddCommand extends Command {
+}
+
+class ClearCommand extends Command {
+}
+
+class CommandResult extends Command {
+}
+
+class DeleteCommand extends Command {
+}
+
+class EditCommand extends Command {
+}
+
+class ExitCommand extends Command {
+}
+
+class FindCommand extends Command {
+}
+
+class HelpCommand extends Command {
+}
+
+class ListCommand extends Command {
+}
+
+class ParseException extends Exception {
+}
+
+class AddCommandParser implements Parser {
+}
+
+class AddressBookParser {
+}
+
+class ArgumentMultimap {
+}
+
+class ArgumentTokenizer {
+}
+
+class CliSyntax {
+}
+
+class DeleteCommandParser implements Parser {
+}
+
+class EditCommandParser implements Parser {
+}
+
+class FindCommandParser implements Parser {
+}
+
+interface Parser<T extends Command> {
+}
+
+class ParserUtil {
+}
+
+class Prefix {
+}
+
+interface Logic {
+}
+
+class LogicManager implements Logic {
+}
+
+class Messages {
+}
+
 AddressBook "1" *-- "*" Person : contains
 Person "1" *-- "*" FreeTime
 
