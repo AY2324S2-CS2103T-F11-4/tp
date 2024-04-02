@@ -110,6 +110,9 @@
       "headings": {
         "dormie-user-guide": "Dormie User Guide",
         "command-summary": "Command summary",
+        "using-this-user-guide": "Using This User Guide",
+        "text-types": "Text Types",
+        "searching-for-keywords-ctrl-f": "Searching for Keywords (Ctrl-F)",
         "quick-start": "Quick start",
         "features": "Features",
         "adding-a-person-add": "Adding a person: add",
