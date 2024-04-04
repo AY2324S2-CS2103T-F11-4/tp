@@ -109,11 +109,11 @@
       "title": "User Guide",
       "headings": {
         "dormie-user-guide": "Dormie User Guide",
-        "command-summary": "Command summary",
+        "command-summary": "Command Summary",
         "using-this-user-guide": "Using This User Guide",
         "text-types": "Text Types",
         "searching-for-keywords-ctrl-f": "Searching for Keywords (Ctrl-F)",
-        "quick-start": "Quick start",
+        "quick-start": "Quick Start",
         "contact-fields": "Contact Fields",
         "features": "Features",
         "adding-a-person-add": "Adding a person: add",
@@ -126,7 +126,7 @@
         "saving-the-data": "Saving the data",
         "editing-the-data-file": "Editing the data file",
         "faq": "FAQ",
-        "known-issues": "Known issues",
+        "known-issues": "Known Issues",
         "glossary": "Glossary"
       },
       "headingKeywords": {}
