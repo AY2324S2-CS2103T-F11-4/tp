@@ -109,28 +109,30 @@
       "title": "User Guide",
       "headings": {
         "dormie-user-guide": "Dormie User Guide",
-        "command-summary": "Command Summary",
         "using-this-user-guide": "Using This User Guide",
-        "text-types": "Text Types",
+        "command-format": "Command Format",
         "searching-for-keywords-ctrl-f": "Searching for Keywords (Ctrl-F)",
-        "quick-start": "Quick Start",
-        "contact-fields": "Contact Fields",
+        "additional-notes": "Additional Notes",
+        "command-summary": "Command summary",
+        "format-for-fields": "Format for Fields",
+        "quick-start": "Quick start",
         "features": "Features",
-        "creates-a-new-contact-for-a-dorm-mate-add": "Creates a new contact for a dorm mate : add",
-        "add-free-time-tag-addtime": "Add Free Time Tag : addTime",
-        "clear-the-entire-contact-list-clear": "Clear the entire contact list : clear",
+        "adding-a-person-add": "Adding a person: add",
+        "adding-free-time-tag-addtime": "Adding Free Time Tag : addTime",
+        "clearing-all-persons-clear": "Clearing all persons: clear",
         "deleting-a-person-delete": "Deleting a person : delete",
-        "delete-free-time-tag-deletetime": "Delete Free Time Tag : deleteTime",
+        "deleting-free-time-tag-deletetime": "Deleting Free Time Tag : deleteTime",
         "editing-a-person-edit": "Editing a person : edit",
-        "end-the-application-exit": "End the application : exit",
+        "close-dormie-exit": "Close Dormie : exit",
         "filter-the-contact-list-by-name-find": "Filter the contact list by name : find",
         "provide-more-detail-on-existing-commands-help": "Provide more detail on existing commands : help",
-        "listing-all-persons-in-dormie-list": "Listing all persons in Dormie : list",
-        "check-who-is-free-whoisfree": "Check who is free : whoisfree",
+        "listing-all-persons-list": "Listing all persons : list",
+        "checking-who-is-free-whoisfree": "Checking who is free : whoisfree",
+        "important-note": "Important Note",
         "saving-the-data": "Saving the data",
         "editing-the-data-file": "Editing the data file",
         "faq": "FAQ",
-        "known-issues": "Known Issues",
+        "known-issues": "Known issues",
         "glossary": "Glossary"
       },
       "headingKeywords": {}
@@ -148,6 +150,14 @@
       "title": "John Doe's Project Portfolio Page",
       "headings": {
         "project-addressbook-level-3": "Project: AddressBook Level 3"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/larainezo.md",
+      "title": "Laraine's Project Portfolio Page",
+      "headings": {
+        "project-dormie": "Project: Dormie"
       },
       "headingKeywords": {}
     },
