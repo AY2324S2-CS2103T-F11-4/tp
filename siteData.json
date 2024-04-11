@@ -171,6 +171,14 @@
       "headingKeywords": {}
     },
     {
+      "src": "team/palloncx.md",
+      "title": "Chee Xiang's Project Portfolio Page",
+      "headings": {
+        "project-dormie": "Project: Dormie"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "tutorials/AddRemark.md",
       "title": "Tutorial: Adding a command",
       "headings": {
