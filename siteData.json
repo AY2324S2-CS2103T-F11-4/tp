@@ -52,7 +52,8 @@
         "common-classes": "Common classes",
         "implementation": "Implementation",
         "free-time-tag-feature": "Free TIme Tag Feature",
-        "proposed-undo-redo-feature": "[Proposed] Undo/redo feature",
+        "add-free-time-command": "Add Free Time Command",
+        "delete-free-time-command": "Delete Free Time Command",
         "documentation-logging-testing-configuration-dev-ops": "Documentation, logging, testing, configuration, dev-ops",
         "appendix-requirements": "Appendix: Requirements",
         "product-scope": "Product scope",
@@ -173,7 +174,15 @@
       "src": "team/larainezo.md",
       "title": "Laraine's Project Portfolio Page",
       "headings": {
-        "project-dormie": "Project: Dormie"
+        "project-dormie": "Project: Dormie",
+        "project-overview": "Project Overview",
+        "technical-details": "Technical Details",
+        "challenges-and-problem-solving": "Challenges and Problem Solving",
+        "results-and-impact": "Results and Impact",
+        "my-contributions-to-the-project": "My contributions to the project",
+        "code-contributed-reposense-link": "Code contributed: RepoSense link",
+        "documentation": "Documentation",
+        "community": "Community"
       },
       "headingKeywords": {}
     },
