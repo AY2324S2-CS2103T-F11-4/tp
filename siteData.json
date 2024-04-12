@@ -51,7 +51,7 @@
         "storage-component": "Storage component",
         "common-classes": "Common classes",
         "implementation": "Implementation",
-        "free-time-tag-feature": "Free TIme Tag Feature",
+        "free-time-tag-feature": "Free Time Tag Feature",
         "add-free-time-command": "Add Free Time Command",
         "delete-free-time-command": "Delete Free Time Command",
         "documentation-logging-testing-configuration-dev-ops": "Documentation, logging, testing, configuration, dev-ops",
@@ -110,6 +110,7 @@
       "title": "User Guide",
       "headings": {
         "dormie-user-guide": "Dormie User Guide",
+        "purpose-of-dormie": "Purpose of Dormie",
         "using-this-user-guide": "Using This User Guide",
         "command-format": "Command Format",
         "searching-for-keywords-ctrl-f": "Searching for Keywords (Ctrl-F)",
