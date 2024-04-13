@@ -10,39 +10,13 @@ interface Logic {
 +setGuiSettings(GuiSettings)
 }
 
-interface ReadOnlyAddressBook {
-+getPersonList(): ObservableList<Person>
+class LogicManager implements Logic {
 }
+
 
 interface ReadOnlyUserPrefs {
 +getGuiSettings(): GuiSettings
 +getAddressBookFilePath(): Path
-}
-
-interface Model {
-+PREDICATE_SHOW_ALL_PERSONS: Predicate<Person>
-
-+hasPerson(Person): boolean
-+deletePerson(Person)
-+addPerson(Person)
-+removePerson(Person)
-+getPersonList(): ObservableList<Person>
-+setPerson(target: Person, editedPerson: Person)
-}
-
-interface Storage  {
-+readUserPrefs(): Optional<UserPrefs>
-+saveUserPrefs(ReadOnlyUserPrefs)
-+getAddressBookFilePath(): Path
-+readAddressBook():Optional<ReadOnlyAddressBook>
-saveAddressBook(ReadOnlyAddressBook)
-}
-
-class ModelManager {
--logger: Logger
--addressBook: AddressBook
--userPrefs: UserPrefs
--filteredPersons: FilteredList<Person>
 }
 
 class UserPrefs {
@@ -55,6 +29,32 @@ class UserPrefs {
 +getAddressBookFilePath(): Path
 }
 
+ReadOnlyUserPrefs <|.. UserPrefs
+
+interface Model {
++PREDICATE_SHOW_ALL_PERSONS: Predicate<Person>
+
++hasPerson(Person): boolean
++deletePerson(Person)
++addPerson(Person)
++removePerson(Person)
++getPersonList(): ObservableList<Person>
++setPerson(target: Person, editedPerson: Person)
+}
+
+class ModelManager {
+-logger: Logger
+-addressBook: AddressBook
+-userPrefs: UserPrefs
+-filteredPersons: FilteredList<Person>
+}
+
+Model <|.. ModelManager
+
+interface ReadOnlyAddressBook {
++getPersonList(): ObservableList<Person>
+}
+
 class AddressBook {
 -persons: UniquePersonList
 
@@ -65,28 +65,105 @@ class AddressBook {
 +setPerson(target: Person, editedPerson: Person)
 }
 
-Model <|.. ModelManager
-ReadOnlyUserPrefs <|.. UserPrefs
 ReadOnlyAddressBook <|.. AddressBook
 
-
 class Person {
--name: Name
--phone: Phone
--email: Email
--roomNumber: RoomNumber
--telegram: Telegram
--birthday: Birthday
--dorm: Dorm
 
 +isSamePerson(Person): boolean
 +equals(Object): boolean
 }
 
-class FreeTime {
+AddressBook "1" *-- "*" Person : contains
+
+class Birthday {
++value: LocalDate
+
+{static} +isValidBirthday(String): boolean
++isBirthday(): boolean
+}
+
+Person "1" *-- "1" Birthday
+
+class Email {
++value: String
+
+{static} +isValidEmail(String): boolean
+}
+
+Person "1" *-- "1" Email
+
+abstract class Tag {
++tagName: String
+
+{abstract} +equals(Object) : boolean
+{abstract} +hashCode() : int
+{abstract} +toString() : String
+}
+
+class DormTag extends Tag {
+{static} +isValidTagName(String): boolean
+}
+
+Person "1" *-- "1" DormTag
+
+class FreeTimeTag extends Tag {
 -day: String
 -startTime: String
 -endTime: String
+
+
+{static} +isValidTimeInterval(String): boolean
+{static} +isValidTagName(String): boolean
+}
+
+Person "1" *-- "*" FreeTimeTag
+
+class Name {
++value: String
+
+{static} +isValidName(String): boolean
+}
+
+Person "1" *-- "1" Name
+
+class Phone {
++value: String
+
+{static} +isValidPhone(String): boolean
+}
+
+Person "1" *-- "1" Phone
+
+class RoomNumber {
+-block: String
+-floor: String
+-roomNumber: String
+-lastModified: LocalDate
+
+{static} +isValidRoomNumber(String): boolean
+{static} +isValidRoomNumberWDate(String): boolean
+{static} +isValidDate(String): boolean
++isOutdated(): boolean
++toString(): String
++toStringWDate(): String
+}
+
+Person "1" *-- "1" RoomNumber
+
+class Telegram {
++value: String
+
+{static} +isValidTelegram(String): boolean
+}
+
+Person "1" *-- "1" Telegram
+
+interface Storage  {
++readUserPrefs(): Optional<UserPrefs>
++saveUserPrefs(ReadOnlyUserPrefs)
++getAddressBookFilePath(): Path
++readAddressBook():Optional<ReadOnlyAddressBook>
+saveAddressBook(ReadOnlyAddressBook)
 }
 
 class CommandException extends Exception {
@@ -158,17 +235,8 @@ class ParserUtil {
 class Prefix {
 }
 
-interface Logic {
-}
-
-class LogicManager implements Logic {
-}
 
 class Messages {
 }
-
-AddressBook "1" *-- "*" Person : contains
-Person "1" *-- "*" FreeTime
-
 
 @enduml
