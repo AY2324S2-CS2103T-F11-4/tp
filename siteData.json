@@ -62,10 +62,12 @@
         "non-functional-requirements": "Non-Functional Requirements",
         "glossary": "Glossary",
         "appendix-instructions-for-manual-testing": "Appendix: Instructions for manual testing",
+        "important-note-when-performing-manual-testing": "Important note when performing manual testing",
         "launch-and-shutdown": "Launch and shutdown",
         "adding-a-person": "Adding a person",
         "deleting-a-person": "Deleting a person",
-        "saving-data-to-json": "Saving data to JSON"
+        "saving-data-to-json": "Saving data to JSON",
+        "appendix-planned-enhancements": "Appendix: Planned Enhancements"
       },
       "headingKeywords": {}
     },
