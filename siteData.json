@@ -67,6 +67,8 @@
         "adding-a-person": "Adding a person",
         "deleting-a-person": "Deleting a person",
         "editing-a-person": "Editing a person",
+        "editing-free-time-tags-of-a-person": "Editing Free Time Tags of a person",
+        "finding-persons-who-are-free": "Finding persons Who are Free",
         "saving-and-loading-data-with-json": "Saving and Loading data with JSON",
         "appendix-effort": "Appendix: Effort",
         "appendix-planned-enhancements": "Appendix: Planned Enhancements"
