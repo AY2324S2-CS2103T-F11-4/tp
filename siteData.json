@@ -66,8 +66,7 @@
         "launch-and-shutdown": "Launch and shutdown",
         "adding-a-person": "Adding a person",
         "deleting-a-person": "Deleting a person",
-        "editing-a-person": "Editing a person",
-        "saving-and-loading-data-with-json": "Saving and Loading data with JSON",
+        "saving-data-to-json": "Saving data to JSON",
         "appendix-effort": "Appendix: Effort",
         "appendix-planned-enhancements": "Appendix: Planned Enhancements"
       },
