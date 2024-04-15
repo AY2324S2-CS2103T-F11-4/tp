@@ -5,41 +5,41 @@ skinparam ArrowFontStyle plain
 box Logic LOGIC_COLOR_T1
 participant ":LogicManager" as LogicManager LOGIC_COLOR
 participant ":AddressBookParser" as AddressBookParser LOGIC_COLOR
-participant "u:DeleteFreeTimeCommand" as DeleteFreeTimeCommand LOGIC_COLOR
+participant "u:DeleteTimeCommand" as DeleteTimeCommand LOGIC_COLOR
 end box
 
 box Model MODEL_COLOR_T1
 participant ":Model" as Model MODEL_COLOR
 end box
-[-> LogicManager : execute(undo)
+[-> LogicManager : execute(deleteTime)
 activate LogicManager
 
-LogicManager -> AddressBookParser : parseCommand(undo)
+LogicManager -> AddressBookParser : parseCommand(deleteTime)
 activate AddressBookParser
 
-create DeleteFreeTimeCommand
-AddressBookParser -> DeleteFreeTimeCommand
-activate DeleteFreeTimeCommand
+create DeleteTimeCommand
+AddressBookParser -> DeleteTimeCommand
+activate DeleteTimeCommand
 
-DeleteFreeTimeCommand --> AddressBookParser
-deactivate DeleteFreeTimeCommand
+DeleteTimeCommand --> AddressBookParser
+deactivate DeleteTimeCommand
 
 AddressBookParser --> LogicManager : u
 deactivate AddressBookParser
 
-LogicManager -> DeleteFreeTimeCommand : execute()
-activate DeleteFreeTimeCommand
+LogicManager -> DeleteTimeCommand : execute()
+activate DeleteTimeCommand
 
-DeleteFreeTimeCommand -> Model : setPerson()
+DeleteTimeCommand -> Model : setPerson()
 activate Model
 
-Model --> DeleteFreeTimeCommand
+Model --> DeleteTimeCommand
 deactivate Model
 
-DeleteFreeTimeCommand --> LogicManager : result
-deactivate DeleteFreeTimeCommand
-DeleteFreeTimeCommand -[hidden]-> LogicManager : result
-destroy DeleteFreeTimeCommand
+DeleteTimeCommand --> LogicManager : result
+deactivate DeleteTimeCommand
+DeleteTimeCommand -[hidden]-> LogicManager : result
+destroy DeleteTimeCommand
 
 [<--LogicManager
 deactivate LogicManager
