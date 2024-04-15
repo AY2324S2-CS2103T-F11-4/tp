@@ -1,0 +1,46 @@
+@startuml
+!include style.puml
+skinparam ArrowFontStyle plain
+
+box Logic LOGIC_COLOR_T1
+participant ":LogicManager" as LogicManager LOGIC_COLOR
+participant ":AddressBookParser" as AddressBookParser LOGIC_COLOR
+participant "u:DeleteFreeTimeCommand" as DeleteFreeTimeCommand LOGIC_COLOR
+end box
+
+box Model MODEL_COLOR_T1
+participant ":Model" as Model MODEL_COLOR
+end box
+[-> LogicManager : execute(undo)
+activate LogicManager
+
+LogicManager -> AddressBookParser : parseCommand(undo)
+activate AddressBookParser
+
+create DeleteFreeTimeCommand
+AddressBookParser -> DeleteFreeTimeCommand
+activate DeleteFreeTimeCommand
+
+DeleteFreeTimeCommand --> AddressBookParser
+deactivate DeleteFreeTimeCommand
+
+AddressBookParser --> LogicManager : u
+deactivate AddressBookParser
+
+LogicManager -> DeleteFreeTimeCommand : execute()
+activate DeleteFreeTimeCommand
+
+DeleteFreeTimeCommand -> Model : setPerson()
+activate Model
+
+Model --> DeleteFreeTimeCommand
+deactivate Model
+
+DeleteFreeTimeCommand --> LogicManager : result
+deactivate DeleteFreeTimeCommand
+DeleteFreeTimeCommand -[hidden]-> LogicManager : result
+destroy DeleteFreeTimeCommand
+
+[<--LogicManager
+deactivate LogicManager
+@enduml
