@@ -54,6 +54,7 @@
         "free-time-tag-feature": "Free Time Tag Feature",
         "add-free-time-command": "Add Free Time Command",
         "delete-free-time-command": "Delete Free Time Command",
+        "find-free-person-command": "Find Free Person Command",
         "documentation-logging-testing-configuration-dev-ops": "Documentation, logging, testing, configuration, dev-ops",
         "appendix-requirements": "Appendix: Requirements",
         "product-scope": "Product scope",
